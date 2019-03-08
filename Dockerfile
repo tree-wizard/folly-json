@@ -21,14 +21,14 @@ RUN git clone https://github.com/facebook/proxygen /root/proxygen/
 RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 
 #download and replace files.
-RUN git clone https://github.com/xxyyx/folly-uri /root/folly-uri
-RUN chmod +777 /root/folly-uri/replacements/deps.sh
+RUN git clone https://github.com/xxyyx/folly-json /root/folly-uri
+RUN chmod +777 /root/folly-json/replacements/deps.sh
 
-RUN mv /root/folly-uri/replacements/deps.sh /root/proxygen/proxygen/deps.sh
-RUN mv /root/folly-uri/replacements/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
-RUN mv /root/folly-uri/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
-RUN mv /root/folly-uri/replacements/match_results.hpp /usr/include/boost/regex/v4/match_results.hpp
-RUN mv /root/folly-uri/replacements/Uri.cpp /root/proxygen/proxygen/folly/folly/Uri.cpp
+RUN mv /root/folly-json/replacements/deps.sh /root/proxygen/proxygen/deps.sh
+RUN mv /root/folly-json/replacements/FollyConfigChecks.cmake /root/proxygen/proxygen/folly/CMake/FollyConfigChecks.cmake
+RUN mv /root/folly-json/replacements/Subprocess.cpp /root/proxygen/proxygen/folly/folly/Subprocess.cpp
+
+RUN mv /root/folly-json/replacements/Range.h /root/proxygen/proxygen/folly/folly/Range.h
 
 #RUN ./deps.sh
 # RUN ldconfig
