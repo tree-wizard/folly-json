@@ -1,4 +1,4 @@
-# Folly uri Dockerfile
+# Folly Json Dockerfile
 
 FROM ubuntu:latest
 RUN apt-get update --fix-missing
@@ -21,7 +21,7 @@ RUN git clone https://github.com/facebook/proxygen /root/proxygen/
 RUN git clone https://github.com/facebook/folly /root/proxygen/proxygen/folly
 
 #download and replace files.
-RUN git clone https://github.com/xxyyx/folly-json /root/folly-uri
+RUN git clone https://github.com/xxyyx/folly-json /root/folly-json
 RUN chmod +777 /root/folly-json/replacements/deps.sh
 
 RUN mv /root/folly-json/replacements/deps.sh /root/proxygen/proxygen/deps.sh
